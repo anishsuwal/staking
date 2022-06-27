@@ -208,7 +208,7 @@ export default function Artex() {
         </div>
       </div>
     ))
-  }*/
+  }
 
 
   async function Stake(_stakeamt, _option) {

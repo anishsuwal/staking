@@ -300,7 +300,101 @@ export default function Artex() {
           Locked Staking
         </div>
       </div>
-      
+      <div className="flex  justify-center items-center  mt-14 w-full ">
+        <div className="flex flex-1 justify-center  flex-col w-full  m-4">
+          <div className="flex flex-1 justify-center w-full items-center">
+            <div className="  justify-between   lg:w-[570px] items-center shadow rounded-2xl bg-[#f4f5f6] lg:p-10 p-3">
+              <div className="flex flex-1   items-center   w-full  ">
+                <div className="w-[29px] h-[29px] ">
+                  <Image
+                    src={artexlogo}
+                    alt="artex logo"
+                    layout="fixed" />
+                </div>
+                <div className="flex flex-1    justify-between  items-center  w-full">
+
+                  <span className="px-3">Artex</span>
+                  <span className="text-[8px] lg:text-xs text-right">account place</span>
+
+                </div>
+              </div>
+
+
+
+              <p className="font-bold py-2 text-xs">DURATION</p>
+             
+              <div className="flex mt-4 justify-between items-center  w-full">
+                <span className="font-bold  text-sm text-left">Lock Amount</span>
+                <span className="justify-end items-end text-xs text-right">Available Amount  {numFormatter.format(maxBal)}  ARTEX</span>
+              </div>
+              <div className="flex flex-row mt-3  justify-between items-center rounded-lg bg-white h-[48px]  ">
+                <input id="amount-input" placeholder="Please Enter the Amount" value={stakeAmount} name="addressTo" type="number"
+                  className="lg:flex rounded-2xl font-semibold text-slate-500 text-xs  lg:w-72 border-0 lg:h-12 w-[115px] hidden "
+                  onChange={({ target: { value } }) => {
+                    setStakeAmount(value)
+                    Calculate1(value)
+                  }} />
+                <input placeholder="0" value={stakeAmount} name="addressTo" type="number"
+                  className="rounded-2xl font-semibold text-slate-500 text-xs  lg:w-72 border-0 lg:h-12 w-[115px] lg:hidden "
+                  onChange={({ target: { value } }) => {
+                    setStakeAmount(value)
+                    Calculate1(value)
+                  }} />
+                <div className="flex justify-center items-center">
+                  <span className="font-bold  text-xs text-center mr-2">ARTEX</span>
+                  <button className="bg-[#04009a] text-white font-bold text-sm   lg:mr-3 mr-3
+                   hover:bg-blue-700 rounded-full w-[125px] h-[24px]"
+                    onClick={() => {
+                      setStakeAmount(maxBal)
+                      Calculate1(maxBal)
+                    }}
+                  >Max Amount</button>
+                </div>
+              </div>
+              <div className="flex mt-3 justify-between items-center  w-full">
+                <span className="font-bold  text-sm  text-left">SUMMARY</span>
+              </div>
+              <div className="bg-white mt-3 p-5 rounded-lg ">
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className="  font-medium text-left">Stake Date</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{date}</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className="font-medium text-left">Redemption Date</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium">{redemptionDate}</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className=" font-medium text-left">Interests</span>
+                  <span className="justify-end font-bold  items-end text-right " value="ddd">{selectInterest}% of tokens on top</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className=" font-bold text-left">Total Earn</span>
+                  <span className="justify-end font-bold  items-end text-right text-green-400">{numFormatter.format(interestAmt)} ARTEX</span>
+                </div>
+              </div>
+              <div className=" bg-[#FFF8F5] text-[#FF6838] text-sm font-medium   mt-5 p-2 rounded-xl border border-orange-400">
+                <p >* If you cancel staking, you will get <strong>charged with 25% cancellation</strong> fees on
+                  their initial staking amount of tokens.</p>
+              </div>
+              <div className="flex flex-1 justify-center items-center w-full " >
+                <Button
+                  disabled={!maxBal}
+                  type="button"
+                  className="text-white text-base font-semibold lg:w-[380px] h-[48px] w-full mt-5   bg-[#04009a]  hover:bg-blue-700 
+                rounded-full cursor-pointer"
+                  onClick={() => {
+                    Stake(stakeAmount, option)
+                    setStakeAmount(0)
+                  }}
+                > Approve Staking</Button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
       <div className="m-4 lg:m-10">
         <div className="lg:flex flex-1 justify-center items-center  text-sm  m-2  grid-cols-1  
           md:grid-cols-2 lg:grid-cols-8 border-b-2 px-3 pb-2 hidden font-medium">

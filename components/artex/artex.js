@@ -13,7 +13,7 @@ import { Button } from "components/ui/common";
 //import { BigNumber} from 'ethers';
 
 
-export const normalizegetdata = (data) => {
+/*export const normalizegetdata = (data) => {
 
   return {
     account: data.person,
@@ -24,7 +24,7 @@ export const normalizegetdata = (data) => {
     count: data.count
   }
 }
-
+*/
 export default function Artex() {
   //const { contract } = useWeb3()
   //const { account } = useWalletInfo()

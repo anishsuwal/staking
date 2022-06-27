@@ -26,8 +26,8 @@ export const normalizegetdata = (data) => {
 }
 
 export default function Artex() {
-  const { contract } = useWeb3()
-  const { account } = useWalletInfo()
+  //const { contract } = useWeb3()
+  //const { account } = useWalletInfo()
   const [selectInterest, setSelectInterest] = useState(15)
   const [stakeAmount, setStakeAmount] = useState()
   const [maxBal, setMaxBal] = useState(0)
@@ -233,7 +233,7 @@ export default function Artex() {
   
 
        
-      const temp = await contract?.methods.Stake(_option, _stakeamt).send({ from: account.data })
+  //    const temp = await contract?.methods.Stake(_option, _stakeamt).send({ from: account.data })
     }
     catch (error) { console.log(error) }
   }
@@ -241,8 +241,8 @@ export default function Artex() {
   
   async function maxAmount() {
     try {
-      const temp = await contract?.methods.balanceOf(account.data).call()
-      const decimal = await contract?.methods.decimals().call()
+    //  const temp = await contract?.methods.balanceOf(account.data).call()
+   //   const decimal = await contract?.methods.decimals().call()
       const dec = 10 ** decimal
       console.log(temp,"anish")
       setGetDecimal(decimal)
@@ -288,10 +288,10 @@ export default function Artex() {
     catch (error) { console.log(error) }
   }
 
-  useEffect(()=>{
+ /* useEffect(()=>{
       console.log("hello")
   },[account,stakeAmount]
-  )
+  )*/
 
   return (
     <>
@@ -314,7 +314,7 @@ export default function Artex() {
                   <div className="flex flex-1    justify-between  items-center  w-full">
 
                   <span className="px-3">Artex</span>
-                  <span className="text-[8px] lg:text-xs text-right">{account.data}</span>
+                  <span className="text-[8px] lg:text-xs text-right">account place</span>
 
                   </div>
               </div>

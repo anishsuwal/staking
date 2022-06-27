@@ -226,7 +226,7 @@ export default function Artex() {
         return
       }
 
-      _stakeamt = BigNumber.from(_stakeamt).mul(BigNumber.from(10).pow(getDecimal));
+     // _stakeamt = BigNumber.from(_stakeamt).mul(BigNumber.from(10).pow(getDecimal));
 
       console.log("amount isxxxxxxxxxxxxxxxxxxxxxxx ", _stakeamt);
 

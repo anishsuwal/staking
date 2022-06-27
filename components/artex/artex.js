@@ -38,7 +38,7 @@ export default function Artex() {
   const [option, setOption] = useState(1)
   const numFormatter = new Intl.NumberFormat('en')
 
-  const notify = (_count) => {
+  /*const notify = (_count) => {
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
@@ -64,7 +64,7 @@ export default function Artex() {
   }
 
 
-  /*const rewardClaim  = async( _count, bool ) => {
+  const rewardClaim  = async( _count, bool ) => {
     if(bool)
     {
          await contract?.methods.get_Reward(_count).send({ from: account.data })

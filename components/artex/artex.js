@@ -392,15 +392,15 @@ export default function Artex() {
                 <span className="font-bold  text-sm  text-left">SUMMARY</span>
               </div>
               <div className="bg-white mt-3 p-5 rounded-lg ">
+
                 <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
-                  <span className="  font-medium text-left">Stake Date</span>
-                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{date}</span>
+                  <span className=" font-medium text-left">Interests</span>
+                  <span className="justify-end font-bold  items-end text-right " value="ddd">{selectInterest}% of tokens on top</span>
                 </div>
                 <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
-                  <span className="font-medium text-left">Redemption Date</span>
-                  <span className="justify-end items-end text-right lg:text-base  font-medium">{redemptionDate}</span>
+                  <span className=" font-bold text-left">Total Earn</span>
+                  <span className="justify-end font-bold  items-end text-right text-green-400">{numFormatter.format(interestAmt)} ARTEX</span>
                 </div>
-              
               </div>
               <div className=" bg-[#FFF8F5] text-[#FF6838] text-sm font-medium   mt-5 p-2 rounded-xl border border-orange-400">
                 <p >* If you cancel staking, you will get <strong>charged with 25% cancellation</strong> fees on

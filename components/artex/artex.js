@@ -133,7 +133,7 @@ export default function Artex() {
     else
       return 0
   }
-  const Transaction = () => {
+ /* const Transaction = () => {
     const swrRes = useSWR(() =>
       contract ? "hi" : "problem",
       async () => {
@@ -208,7 +208,7 @@ export default function Artex() {
         </div>
       </div>
     ))
-  }
+  }*/
 
 
   async function Stake(_stakeamt, _option) {
@@ -444,7 +444,7 @@ export default function Artex() {
           <div className=" flex-1  text-left font-bold">Total Earn</div>
           <div className=" flex-1  "></div>
         </div>
-        <Transaction />
+     
       </div>
 
 

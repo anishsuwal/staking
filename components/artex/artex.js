@@ -365,6 +365,43 @@ export default function Artex() {
                 <span className="justify-end items-end text-xs text-right">Available Amount  {numFormatter.format(maxBal)}  ARTEX</span>
               </div>
               
+              <div className="flex mt-3 justify-between items-center  w-full">
+                <span className="font-bold  text-sm  text-left">SUMMARY</span>
+              </div>
+              <div className="bg-white mt-3 p-5 rounded-lg ">
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className="  font-medium text-left">Stake Date</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{date}</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className="font-medium text-left">Redemption Date</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium">{redemptionDate}</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className=" font-medium text-left">Interests</span>
+                  <span className="justify-end font-bold  items-end text-right " value="ddd">{selectInterest}% of tokens on top</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className=" font-bold text-left">Total Earn</span>
+                  <span className="justify-end font-bold  items-end text-right text-green-400">{numFormatter.format(interestAmt)} ARTEX</span>
+                </div>
+              </div>
+              <div className=" bg-[#FFF8F5] text-[#FF6838] text-sm font-medium   mt-5 p-2 rounded-xl border border-orange-400">
+                <p >* If you cancel staking, you will get <strong>charged with 25% cancellation</strong> fees on
+                  their initial staking amount of tokens.</p>
+              </div>
+              <div className="flex flex-1 justify-center items-center w-full " >
+                <Button
+                  disabled={!maxBal}
+                  type="button"
+                  className="text-white text-base font-semibold lg:w-[380px] h-[48px] w-full mt-5   bg-[#04009a]  hover:bg-blue-700 
+                rounded-full cursor-pointer"
+                  onClick={() => {
+                    Stake(stakeAmount, option)
+                    setStakeAmount(0)
+                  }}
+                > Approve Staking</Button>
+              </div>
 
             </div>
           </div>

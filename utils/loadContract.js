@@ -12,10 +12,13 @@ export const loadContract = async (name, web3) => {
     try {
         contract = new web3.eth.Contract(
           Artifact.abi,
-          Artifact.networks[NETWORK_ID].address
+          Artifact.networks['97'].address
         )
+        console.log(contract)
+
       } 
-    catch {
+    catch(error) {
+      console.log(error)
         console.error(`Cannot load the contract...${name}... You are connnected to wrong network`)
     }
     return contract

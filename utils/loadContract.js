@@ -12,7 +12,7 @@ export const loadContract = async (name, web3) => {
     try {
         contract = new web3.eth.Contract(
           Artifact.abi,
-          Artifact.networks['97'].address
+          Artifact.networks[NETWORK_ID].address
         )
         console.log(contract)
 

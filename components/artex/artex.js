@@ -244,6 +244,7 @@ export default function Artex() {
       const temp = await contract?.methods.balanceOf(account.data).call()
       const decimal = await contract?.methods.decimals().call()
       const dec = 10 ** decimal
+      console.log(temp,"anish")
       setGetDecimal(decimal)
       const _bal = (temp / dec)
       if(_bal>0 )

@@ -54,7 +54,7 @@ export default function Artex() {
         }
           <button className=" border hover:bg-[#04009a] hover:text-white rounded-full w-[129px] h-[40px] lg:h-[48px] lg:w-[225px] text-lg font-bold items-center"
            onClick={() =>{
-            rewardClaim(_count,false)
+          //  rewardClaim(_count,false)
             onClose()}}>Submit</button>
           </div>
           </div>
@@ -64,7 +64,7 @@ export default function Artex() {
   }
 
 
-  const rewardClaim  = async( _count, bool ) => {
+  /*const rewardClaim  = async( _count, bool ) => {
     if(bool)
     {
          await contract?.methods.get_Reward(_count).send({ from: account.data })
@@ -89,7 +89,7 @@ export default function Artex() {
       rewardClaim(_count,true)
     }
 
-  }
+  }*/
   
 
   const date = moment().format("DD MMM YYYY hh:mm ")

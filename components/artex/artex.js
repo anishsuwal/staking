@@ -322,72 +322,49 @@ export default function Artex() {
 
 
               <p className="font-bold py-2 text-xs">DURATION</p>
-             
+              <div className="flex1    justify-center items-center rounded-2xl  <libg-zinc-200">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
+                  <div className="flex1 text-center justify-center">
+                    <input className=" sr-only peer" type="radio" value="60 Days" name="answer" id="60" defaultChecked />
+                    <label className="flex rounded-full p-2 a text-sm bg-white border border-gray-300  
+                    cursor-pointer focus:outline-none  hover:bg-[#04009a] hover:text-white 
+                     peer-checked:bg-[#04009a] peer-checked:text-white  font-bold peer-checked:ring-1 
+                    peer-checked:border-transparent justify-center"
+                      htmlFor="60" onClick={() => {
+                        Calculate(15, 60)
+                      }}>{"60 Days"}</label>
+                  </div>
+                  <div >
+                    <input className="sr-only peer" type="radio" value="90 Days" name="answer" id="90" />
+                    <label className="flex rounded-full p-2  justify-center  text-sm bg-white border border-gray-300  cursor-pointer focus:outline-none 
+                   hover:bg-[#04009a] hover:text-white px-3 pr-3 lg:px-4 lg:pr-4 peer-checked:bg-[#04009a] peer-checked:text-white  font-bold peer-checked:ring-1 peer-checked:border-transparent"
+                      htmlFor="90" onClick={() => {
+                        Calculate(20, 90)
+                      }}>{"90 Days"}</label>
+                  </div>
+                  <div >
+                    <input className="sr-only peer" type="radio" value="120 Days" name="answer" id="120" />
+                    <label className="flex rounded-full p-2 text-center text-sm bg-white border border-gray-300  cursor-pointer focus:outline-none
+                   hover:bg-[#04009a] hover:text-white px-3 pr-3 justify-center lg:px-4 lg:pr-4 peer-checked:bg-[#04009a] peer-checked:text-white  font-bold peer-checked:ring-1 peer-checked:border-transparent"
+                      htmlFor="120" onClick={() => {
+                        Calculate(30, 120)
+                      }}>{"120 Days"}</label>
+                  </div>
+                  <div >
+                    <input className="sr-only peer" type="radio" value="365 Days" name="answer" id="365" />
+                    <label className="flex rounded-full p-2 text-center  text-sm bg-white border border-gray-300  cursor-pointer focus:outline-none
+                   hover:bg-[#04009a] hover:text-white px-3 pr-3 justify-center lg:px-4 lg:pr-4 peer-checked:bg-[#04009a] peer-checked:text-white  font-bold peer-checked:ring-1 peer-checked:border-transparent"
+                      htmlFor="365" onClick={() => {
+                        Calculate(90, 365)
+                      }}>{"365 Days"}</label>
+                  </div>
+                </div>
+              </div>
               <div className="flex mt-4 justify-between items-center  w-full">
                 <span className="font-bold  text-sm text-left">Lock Amount</span>
                 <span className="justify-end items-end text-xs text-right">Available Amount  {numFormatter.format(maxBal)}  ARTEX</span>
               </div>
-              <div className="flex flex-row mt-3  justify-between items-center rounded-lg bg-white h-[48px]  ">
-                <input id="amount-input" placeholder="Please Enter the Amount" value={stakeAmount} name="addressTo" type="number"
-                  className="lg:flex rounded-2xl font-semibold text-slate-500 text-xs  lg:w-72 border-0 lg:h-12 w-[115px] hidden "
-                  onChange={({ target: { value } }) => {
-                    setStakeAmount(value)
-                    Calculate1(value)
-                  }} />
-                <input placeholder="0" value={stakeAmount} name="addressTo" type="number"
-                  className="rounded-2xl font-semibold text-slate-500 text-xs  lg:w-72 border-0 lg:h-12 w-[115px] lg:hidden "
-                  onChange={({ target: { value } }) => {
-                    setStakeAmount(value)
-                    Calculate1(value)
-                  }} />
-                <div className="flex justify-center items-center">
-                  <span className="font-bold  text-xs text-center mr-2">ARTEX</span>
-                  <button className="bg-[#04009a] text-white font-bold text-sm   lg:mr-3 mr-3
-                   hover:bg-blue-700 rounded-full w-[125px] h-[24px]"
-                    onClick={() => {
-                      setStakeAmount(maxBal)
-                      Calculate1(maxBal)
-                    }}
-                  >Max Amount</button>
-                </div>
-              </div>
-              <div className="flex mt-3 justify-between items-center  w-full">
-                <span className="font-bold  text-sm  text-left">SUMMARY</span>
-              </div>
-              <div className="bg-white mt-3 p-5 rounded-lg ">
-                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
-                  <span className="  font-medium text-left">Stake Date</span>
-                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{date}</span>
-                </div>
-                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
-                  <span className="font-medium text-left">Redemption Date</span>
-                  <span className="justify-end items-end text-right lg:text-base  font-medium">{redemptionDate}</span>
-                </div>
-                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
-                  <span className=" font-medium text-left">Interests</span>
-                  <span className="justify-end font-bold  items-end text-right " value="ddd">{selectInterest}% of tokens on top</span>
-                </div>
-                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
-                  <span className=" font-bold text-left">Total Earn</span>
-                  <span className="justify-end font-bold  items-end text-right text-green-400">{numFormatter.format(interestAmt)} ARTEX</span>
-                </div>
-              </div>
-              <div className=" bg-[#FFF8F5] text-[#FF6838] text-sm font-medium   mt-5 p-2 rounded-xl border border-orange-400">
-                <p >* If you cancel staking, you will get <strong>charged with 25% cancellation</strong> fees on
-                  their initial staking amount of tokens.</p>
-              </div>
-              <div className="flex flex-1 justify-center items-center w-full " >
-                <Button
-                  disabled={!maxBal}
-                  type="button"
-                  className="text-white text-base font-semibold lg:w-[380px] h-[48px] w-full mt-5   bg-[#04009a]  hover:bg-blue-700 
-                rounded-full cursor-pointer"
-                  onClick={() => {
-                    Stake(stakeAmount, option)
-                    setStakeAmount(0)
-                  }}
-                > Approve Staking</Button>
-              </div>
+              
 
             </div>
           </div>

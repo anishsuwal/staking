@@ -391,7 +391,17 @@ export default function Artex() {
               <div className="flex mt-3 justify-between items-center  w-full">
                 <span className="font-bold  text-sm  text-left">SUMMARY</span>
               </div>
+              <div className="bg-white mt-3 p-5 rounded-lg ">
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className="  font-medium text-left">Stake Date</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{date}</span>
+                </div>
+                <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
+                  <span className="font-medium text-left">Redemption Date</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium">{redemptionDate}</span>
+                </div>
               
+              </div>
               <div className=" bg-[#FFF8F5] text-[#FF6838] text-sm font-medium   mt-5 p-2 rounded-xl border border-orange-400">
                 <p >* If you cancel staking, you will get <strong>charged with 25% cancellation</strong> fees on
                   their initial staking amount of tokens.</p>

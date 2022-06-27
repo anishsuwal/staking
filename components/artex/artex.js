@@ -93,7 +93,7 @@ export default function Artex() {
   
 
   const date = moment().format("DD MMM YYYY hh:mm ")
-  function getUnixDate(udate) {
+ /* function getUnixDate(udate) {
     var dateString = moment.unix(udate).format('DD MMM YYYY hh:mm ')
     return dateString
   }
@@ -133,7 +133,7 @@ export default function Artex() {
     else
       return 0
   }
- /* const Transaction = () => {
+  const Transaction = () => {
     const swrRes = useSWR(() =>
       contract ? "hi" : "problem",
       async () => {

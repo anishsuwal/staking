@@ -394,7 +394,7 @@ export default function Artex() {
               <div className="bg-white mt-3 p-5 rounded-lg ">
                 <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
                   <span className="  font-medium text-left">Stake Date</span>
-                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{currdate}</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium ">currdate</span>
                 </div>
                 <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
                   <span className="font-medium text-left">Redemption Date</span>

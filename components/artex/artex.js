@@ -92,7 +92,8 @@ export default function Artex() {
   }*/
 
 
-  const _stakedate =  new Date()
+  const _stakedate = new Date().getTime();
+
   /* function getUnixDate(udate) {
      var dateString = moment.unix(udate).format('DD MMM YYYY hh:mm ')
      return dateString
@@ -394,7 +395,7 @@ export default function Artex() {
               <div className="bg-white mt-3 p-5 rounded-lg ">
                 <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
                   <span className="  font-medium text-left">Stake Date</span>
-                  <span className="justify-end items-end text-right lg:text-base  font-medium ">bbbb{_stakedate.getTime()}ddd</span>
+                  <span className="justify-end items-end text-right lg:text-base  font-medium ">{_stakedate}</span>
                 </div>
                 <div className="flex p-2 justify-between items-center text-xs lg:text-sm  w-full">
                   <span className="font-medium text-left">Redemption Date</span>
